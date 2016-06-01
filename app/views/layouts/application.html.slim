@@ -1,0 +1,24 @@
+doctype 5
+html
+  head
+    meta[charset="utf-8"]
+    /[if lt IE 9]
+      meta[content="text/html; charset=utf-8" http-equiv="Content-Type"]
+      = javascript_include_tag "//html5shiv.googlecode.com/svn/trunk/html5.js"
+    meta[name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"]
+    / ===== Default Google meta tags
+    meta name="robots" content="index, follow"
+    meta name="google" content="notranslate"
+    = display_meta_tags
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+    = favicon_link_tag 'favicon.png'
+
+  body.site
+    = initjs_tag 'BasecampClone'
+    = render 'layouts/flash'
+    = render 'partials/header'
+    .site-content
+      = yield
+    = render 'partials/footer'
+    = render 'partials/javascripts'
