@@ -15,3 +15,4 @@
 //= require basecamp_clone/basecamp_clone.js
 //= require init.js
 //= require_tree .
+//= require bootstrap
