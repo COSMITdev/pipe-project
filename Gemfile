@@ -20,6 +20,7 @@ gem "slim-rails", "~> 3.0.1"
 gem "activeadmin", github: "activeadmin"
 gem "bootstrap-sass"
 gem "font-awesome-rails"
+gem "meta-tags"
 
 group :development do
   gem "quiet_assets"
