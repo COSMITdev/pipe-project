@@ -10,4 +10,7 @@ Rails.application.routes.draw do
     get 'invitations', to: 'projects#invitations', as: :invitation
     post 'send_invitation', to: 'projects#send_invitation', as: :send_invitation
   end
+
+  get 'projects_index', to: 'pages#projects_index', as: :projects_index
+
 end
