@@ -5,13 +5,14 @@
 @import 'font-awesome';
 @import 'sanilize';
 
+// ==== Variables
+@import 'variables/colors';
+
 // ==== Base
 @import 'base/font';
 @import 'base/utility';
 
-// ==== Variables
-@import 'variables/colors';
-
 // ==== Components
+@import 'components/navbar';
 
 // ==== Pages

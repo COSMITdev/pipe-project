@@ -1,0 +1,46 @@
+// # =================================================================
+// # Navbar
+// # =================================================================
+.navbar {
+  border: none;
+  height: 45px;
+  min-height: auto;
+  margin-bottom: 0;
+
+  .navbar-brand {
+  	color: white;
+  	height: 45px;
+  	padding: 11px 15px 14px;
+
+  	&:hover,
+	  &:focus {
+	  	color: lighten($brand, 30%);
+	  	transition: all .2s;
+	  }
+  }
+}
+
+.navbar-default {
+  border-radius: 0;
+  background-color: $brand;
+	
+	.navbar-nav > li > a {
+		color: white;
+	  padding: 6px 13px 7px;
+    margin-top: 5px;
+    margin-left: 5px;
+    
+    &:hover,
+    &:focus {
+    	color: white;
+    	background-color: lighten($brand, 10%);
+    	border-radius: 5px;
+    }
+
+    &.active {
+    	background-color: darken($brand, 10%);
+    	border-radius: 5px;
+    }
+	}
+}
+
