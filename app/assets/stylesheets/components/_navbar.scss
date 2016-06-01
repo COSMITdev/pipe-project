@@ -6,6 +6,7 @@
   height: 45px;
   min-height: auto;
   margin-bottom: 0;
+  z-index: 1000;
 
   .navbar-brand {
   	color: white;
@@ -29,18 +30,45 @@
 	  padding: 6px 13px 7px;
     margin-top: 5px;
     margin-left: 5px;
-    
+
     &:hover,
     &:focus {
-    	color: white;
     	background-color: lighten($brand, 10%);
-    	border-radius: 5px;
+    	border-radius: $globalRadius;
+    	color: white;
     }
 
     &.active {
     	background-color: darken($brand, 10%);
-    	border-radius: 5px;
+    	border-radius: $globalRadius;
     }
 	}
+
+	.navbar-toggle {
+		border: 0;
+		padding: 11px 10px;
+ 		margin-bottom: 0;
+    margin-top: 4px;
+
+    .icon-bar {
+    	background-color: white;
+		}
+
+  	&:hover,
+  	&:focus {
+  		background-color: lighten($brand, 10%);
+  	}
+  }
+
+  .navbar-collapse {
+  	background-color: $brand;
+  	border: 0;
+  }
+}
+
+@media (max-width: 768px) {
+	.navbar-default .navbar-nav > li > a {
+    margin: 0px 5px 2px 5px;
+  }
 }
 
