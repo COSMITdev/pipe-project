@@ -61,4 +61,4 @@ After you finish the implementations what you did on your branch, you can up thi
 ## Finishing/Delivering/Updating Trello
 
 For now we are using Trello to organize the features and sprints of the project, so, just delivery a task when you finish this and up the PR. Anyone can update cards on Trello, so be confident to do it yourself when you feel that your feature is ready to launch.
-https://trello.com/b/xxxxx/example
+https://trello.com/b/r1MEFAOq/basecamp-killer
