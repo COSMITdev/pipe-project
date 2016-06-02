@@ -1,0 +1,40 @@
+// # =================================================================
+// # Form
+// # =================================================================
+
+// # General
+// # =================================================================
+input:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]),
+select,
+textarea,
+button[data-toggle="dropdown"] {
+  appearance: none;
+  background-color: white;
+  border: 2px solid transparent !important;
+  border-radius: $globalRadius !important;
+  box-shadow: none !important;
+  box-sizing: border-box;
+  outline: 0;
+  padding: 5px 10px;
+
+  &.-block {
+    width: 100% !important;
+  }
+}
+
+::placeholder {
+  color: #ccc !important;
+}
+
+// # Textarea
+// # =================================================================
+textarea {
+  background-color: white;
+  min-height: 80px;
+  border: 2px solid $gray-blue-light !important;
+
+  &:active,
+  &:focus {
+    border: 2px solid $brand !important;
+  }
+}
