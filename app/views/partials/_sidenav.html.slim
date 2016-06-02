@@ -3,7 +3,7 @@ nav
 		h5.small.u-textUp.u-marginBot15 Your Project
 		ul
 			li
-				= link_to dashboard_index_path, class: 'active' do 
+				= link_to project_path(@project), class: 'active' do 
 					.navIcon
 						i.fa.fa-bar-chart-o
 					span Dashboard
@@ -31,6 +31,8 @@ nav
 		span 
 			.navIcon
 				i.fa.fa-user
-			span 36 members
+			span 
+				= @project.users.count+1
+				|  members
 		span.u-marginLft5.u-marginRgt5 ・
 		span = link_to 'Invite members', project_invitation_path(@project), class: 'u-link'
