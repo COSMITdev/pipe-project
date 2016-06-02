@@ -1,0 +1,26 @@
+.container-fluid.-fullHeight
+	.row
+		/ main content
+		.col-sm-10.u-centered.mainContent
+			section.threads
+				.pageTitle.u-marginTop20.u-marginBot30
+					h1 Your Projects
+				.row.projectList
+					.col-sm-6.col-md-4
+						= link_to dashboard_index_path do
+							.projectBox
+								h2.newProject + New Project
+								p Start a new project now and collaborate with people to create awesome things
+					- 5.times do
+						.col-sm-6.col-md-4
+							= link_to dashboard_index_path do
+								.projectBox
+									h2 Project name
+									p Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+									span.memberIcon.small
+										span.u-marginRgt5
+											i.fa.fa-user
+										span 36 members
+				.row.u-marginTop25
+					.col-sm-12
+						= link_to 'New Project', '', class: 'u-linkInverse'
