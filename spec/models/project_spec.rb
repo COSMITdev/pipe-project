@@ -8,5 +8,7 @@ RSpec.describe Project, type: :model do
 
   describe "Relations" do
     it { should belong_to :user }
+    it { should have_many(:users).through(:project_users) }
+    it { should have_many(:invitations).dependent(:destroy) }
   end
 end

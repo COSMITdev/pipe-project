@@ -5,7 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :topics, dependent: :destroy
-  has_many :projects, dependent: :destroy
+  has_many :project_users
+  has_many :projects, through: :project_users
+  has_many :own_projects, dependent: :destroy, class_name: 'Project'
   has_many :comments, dependent: :destroy
 
   validates :name, presence: true

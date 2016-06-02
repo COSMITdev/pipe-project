@@ -7,7 +7,8 @@ RSpec.describe User, type: :model do
 
   describe "Relations" do
     it { should have_many(:topics).dependent(:destroy) }
-    it { should have_many(:projects).dependent(:destroy) }
+    it { should have_many(:projects).through(:project_users) }
+    it { should have_many(:own_projects).dependent(:destroy) }
     it { should have_many(:comments).dependent(:destroy) }
   end
 end

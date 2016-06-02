@@ -1,4 +1,12 @@
 FactoryGirl.define do
+  factory :project_user do
+    project nil
+    user nil
+  end
+  factory :invitation do
+    project nil
+    email "MyString"
+  end
   factory :comment do
     user nil
     topic ""
