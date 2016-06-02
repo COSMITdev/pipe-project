@@ -26,9 +26,13 @@ class CommentsController < ApplicationController
   private
 
   def check_permission
-    if Project.find(params[:project_id]).user != current_user
-      flash[:alert] = 'Você não tem permissão para comentar neste projeto.'
-      redirect projects_path
+    # Check if user is owner of project or if it belong to members
+    owner   = Project.find(params[:project_id]).user
+    members = Project.find(params[:project_id]).users
+
+    unless owner == current_user || members.include?(current_user)
+      flash[:alert] = 'Você não tem permissão para acessar este projeto.'
+      redirect_to projects_path
     end
   end
 end

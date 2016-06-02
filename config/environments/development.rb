@@ -1,4 +1,5 @@
 Rails.application.configure do
+  Slim::Engine.set_options pretty: true
   config.cache_classes = false
   config.eager_load = false
   config.consider_all_requests_local       = true
@@ -9,7 +10,7 @@ Rails.application.configure do
     Bullet.bullet_logger = true
     Bullet.rails_logger = true
   end
-  config.action_mailer.delivery_method = :test
+  config.action_mailer.delivery_method = :letter_opener
   config.active_support.deprecation = :log
   config.active_record.migration_error = :page_load
   config.assets.debug = true

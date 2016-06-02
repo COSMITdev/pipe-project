@@ -1,0 +1,6 @@
+h1 Invitations#new
+
+= simple_form_for @invitation, url: project_send_invitation_path(@project) do |f|
+  = f.input :email
+
+  = f.submit 'Convidar'

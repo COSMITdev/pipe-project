@@ -15,12 +15,6 @@
     },
     "SECRET_KEY_BASE": {
       "required": true
-    },
-    "GOOGLE_ANALYTICS": {
-      "required": true
-    },
-    "APPLICATION_HOST": {
-      "required": true
     }
   },
   "formation": {},

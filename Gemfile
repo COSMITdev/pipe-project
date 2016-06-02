@@ -26,6 +26,7 @@ group :development do
   gem "quiet_assets"
   gem "spring"
   gem "spring-commands-rspec"
+  gem "letter_opener"
 end
 
 group :development, :test do
