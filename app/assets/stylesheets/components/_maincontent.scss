@@ -20,8 +20,7 @@
       *vertical-align: auto;
       position: relative;
       padding: 0 20px 0 0;
-
-      &:before, 
+ 
       &:after {
         content: '';
         display: block;
@@ -31,7 +30,6 @@
         border-top: 1px solid $gray-blue-light;
       }
 
-      &:before { right: 100%; }
       &:after { left: 100%; }
     }
 	}
