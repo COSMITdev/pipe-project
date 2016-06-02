@@ -1,6 +1,6 @@
 .container-fluid.-fullHeight
 	.row
-		/ nav-left
+		/ sidenav (left)
 		.col-sm-4.col-md-3.hidden-xs.sideNav
 			= render 'partials/sidenav'
 		/ main content
@@ -11,17 +11,17 @@
 				ul.threadList.u-marginTop30.u-marginBot25
 					li
 						h3 Some title of a thread goes here to inform
-						p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco et dolore magna aliqua. Ut enim ad minim veniam, quis nostru...
+						p.small Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco et dolore magna aliqua. Ut enim ad minim veniam, quis nostru...
 					li
 						h3 Some title of a thread goes here to inform
-						p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco et dolore magna aliqua. Ut enim ad minim veniam, quis nostru...
+						p.small Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco et dolore magna aliqua. Ut enim ad minim veniam, quis nostru...
 					li
 						h3 Some title of a thread goes here to inform
-						p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco et dolore magna aliqua. Ut enim ad minim veniam, quis nostru...
+						p.small Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco et dolore magna aliqua. Ut enim ad minim veniam, quis nostru...
 				
 				= link_to 'See all Threads', '', class: 'u-linkInverse'
 
-			section.tasks.u-marginTop40.u-marginBot15
+			section.tasks.u-marginTop40
 				h2.heading
 					span Last Tasks
 				.taskList.u-marginTop30.u-marginBot25

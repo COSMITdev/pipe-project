@@ -11,6 +11,6 @@ Rails.application.routes.draw do
     post 'send_invitation', to: 'projects#send_invitation', as: :send_invitation
   end
 
-  get 'projects_index', to: 'pages#projects_index', as: :projects_index
-
+  get 'projects_index',		to: 'pages#projects_index',		as: :projects_index
+  get 'threads_index', 		to: 'pages#threads_index', 		as: :threads_index
 end
