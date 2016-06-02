@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   resources :projects, except: :destroy do
-    resources :topics, except: [:index, :destroy]
+    resources :topics, except: [:index, :destroy] do
+      resources :comments, only: :create
+    end
   end
 end

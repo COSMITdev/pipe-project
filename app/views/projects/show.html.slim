@@ -1,2 +1,5 @@
 h1 = @project.name
-p that's all folks, nothing to see here yet :D
+p = link_to 'Iniciar Discussão', new_project_topic_path(@project)
+- @topics.each do |topic|
+  h2 = link_to topic.title, project_topic_path(@project, topic)
+  hr

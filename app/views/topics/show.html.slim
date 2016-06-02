@@ -1,2 +1,18 @@
-h1 Topics#show
-p Find me in app/views/topics/show.html.slim
+h1 = "#{@topic.title} (#{link_to 'Editar', edit_project_topic_path(@project, @topic)})".html_safe
+
+p = @topic.body
+
+hr
+
+- if @comments.any?
+  - @comments.each do |comment|
+    small = "#{comment.user.name} - #{time_ago_in_words(comment.created_at)}"
+    p = comment.body
+- else
+  p Nothing to see here...yet!
+
+= simple_form_for @comment, url: project_topic_comments_path(@project, @topic) do |f|
+  = f.label :body
+  = f.input :body, label: false
+  br
+  = f.submit 'Comentar'

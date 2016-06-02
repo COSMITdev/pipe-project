@@ -1,2 +1,7 @@
 h1 Topics#new
-p Find me in app/views/topics/new.html.slim
+
+= simple_form_for @topic, url: project_topics_path do |f|
+  = f.input :title
+  = f.input :body
+  
+  = f.submit 'Criar Discussão'

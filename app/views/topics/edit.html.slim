@@ -1,2 +1,7 @@
 h1 Topics#edit
-p Find me in app/views/topics/edit.html.slim
+
+= simple_form_for @topic, url: project_topic_path(@topic.project, @topic) do |f|
+  = f.input :title
+  = f.input :body
+  
+  = f.submit 'Editar Discussão'

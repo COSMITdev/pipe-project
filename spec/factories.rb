@@ -1,4 +1,9 @@
 FactoryGirl.define do
+  factory :comment do
+    user nil
+    topic ""
+    body "MyText"
+  end
   factory :topic do
     user nil
     project nil
