@@ -1,2 +1,51 @@
 nav
-	h1 test
+	section.sideNavYourProject
+		h5.small.u-textUp.u-marginBot15 Your Project
+		ul
+			li
+				= link_to '', class: 'active' do 
+					.navIcon
+						i.fa.fa-bar-chart-o
+					span Dashboard
+			li
+				= link_to '' do 
+					.navIcon
+						i.fa.fa-commenting-o
+					span Threads
+			li
+				= link_to '' do 
+					.navIcon
+						i.fa.fa-check-square-o
+					span Tasks
+
+	section.sideNavProjects
+		h5.small.u-textUp.u-marginBot15.u-marginTop35 Last Projects
+		ul
+			li
+				= link_to '' do 
+					span Project Name
+			li
+				= link_to '' do 
+					span Project Name
+			li
+				= link_to '' do 
+					span Project Name
+			li
+				= link_to '' do 
+					span Project Name
+			li
+				= link_to '' do 
+					span Project Name
+			li
+				= link_to '' do 
+					span Project Name
+		= link_to '+ New Project', '', class: 'u-linkInverse u-marginTop15'
+
+	section.sideNavFooter
+		span 
+			= link_to '', class: 'u-linkInverse' do 
+				.navIcon
+					i.fa.fa-user
+				span 36 members
+		span.u-marginLft5.u-marginRgt5 ・
+		span = link_to 'Invite members', '', class: 'u-link'

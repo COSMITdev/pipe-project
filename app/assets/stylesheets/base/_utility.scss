@@ -133,6 +133,26 @@
   text-transform: none;
 }
 
+// # Link
+// # =================================================================
+.u-link {
+  color: $brand;
+
+  &:hover,
+  &:focus {
+    color: $brand;
+  }
+}
+
+.u-linkInverse {
+  color: $gray;
+
+  &:hover,
+  &:focus {
+    color: $brand;
+  }
+}
+
 // # Misc
 // # =================================================================
 .u-imageReplace {
