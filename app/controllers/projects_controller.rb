@@ -7,6 +7,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @projects = current_user.own_projects + current_user.projects
     @project = Project.find(params[:id])
     @topics = @project.topics
   end

@@ -2,6 +2,11 @@ class TopicsController < ApplicationController
   before_action :check_permission
   before_action :authenticate_user!
 
+  def index
+    @project = Project.find(params[:project_id])
+    @topic = @project.topics.all
+  end
+
   def show
     @project = Project.find(params[:project_id])
     @topic = @project.topics.find(params[:id])

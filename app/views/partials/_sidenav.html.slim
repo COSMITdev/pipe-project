@@ -21,31 +21,16 @@ nav
 	section.sideNavProjects
 		h5.small.u-textUp.u-marginBot15.u-marginTop35 Last Projects
 		ul
-			li
-				= link_to '' do 
-					span Project Name
-			li
-				= link_to '' do 
-					span Project Name
-			li
-				= link_to '' do 
-					span Project Name
-			li
-				= link_to '' do 
-					span Project Name
-			li
-				= link_to '' do 
-					span Project Name
-			li
-				= link_to '' do 
-					span Project Name
-		= link_to '+ New Project', '', class: 'u-linkInverse u-marginTop15'
+			- @projects.each do |project|
+				li
+					= link_to project_path(project) do 
+						span = project.name
+		= link_to '+ New Project', new_project_path, class: 'u-linkInverse u-marginTop15'
 
 	section.sideNavFooter
 		span 
-			= link_to '', class: 'u-linkInverse' do 
-				.navIcon
-					i.fa.fa-user
-				span 36 members
+			.navIcon
+				i.fa.fa-user
+			span 36 members
 		span.u-marginLft5.u-marginRgt5 ・
-		span = link_to 'Invite members', '', class: 'u-link'
+		span = link_to 'Invite members', project_invitation_path(@project), class: 'u-link'
