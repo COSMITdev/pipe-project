@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :check_permission, except: [:index, :new, :create]
+  before_action :authenticate_user!
 
   def index
     @projects = current_user.own_projects + current_user.projects
