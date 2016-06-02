@@ -1,0 +1,29 @@
+{
+  "name": "basecamp-clone",
+  "scripts": {
+    "postdeploy": "bin/rake db:setup"
+  },
+  "env": {
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "required": true
+    },
+    "GOOGLE_ANALYTICS": {
+      "required": true
+    }
+  },
+  "formation": {},
+  "addons": [
+    "sendgrid",
+    "heroku-postgresql"
+  ],
+  "buildpacks": []
+}
