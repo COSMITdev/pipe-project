@@ -1,4 +1,10 @@
 FactoryGirl.define do
+  factory :topic do
+    user nil
+    project nil
+    title "MyString"
+    body "MyText"
+  end
   factory :project do
     user_id nil
     name "MyString"
