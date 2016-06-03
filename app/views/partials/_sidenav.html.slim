@@ -1,6 +1,6 @@
 nav
 	section.sideNavYourProject
-		h5.small.u-textUp.u-marginBot15 Your Project
+		h5.small.u-textUp.u-marginBot15 = @project.name
 		ul
 			li
 				= link_to project_path(@project), class: 'active' do 
