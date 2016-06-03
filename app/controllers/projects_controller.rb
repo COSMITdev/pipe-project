@@ -37,7 +37,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
 
     if @project.valid? && @project.update_attributes(permitted_params)
-      redirect_to @project, alert: 'Your project was successfully edited!'
+      redirect_to @project, notice: 'Your project was successfully edited!'
     else
       flash[:alert] = 'Please, check errors in the form'
       render :edit
