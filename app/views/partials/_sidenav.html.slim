@@ -6,7 +6,7 @@ nav
         i.fa.fa-pencil-square-o.u-floatRgt
     ul
       li
-        = link_to project_path(@project), title: 'Dashboard', , class: ('active' if params[:controller] == 'projects') do
+        = link_to project_path(@project), title: 'Dashboard', class: ('active' if params[:controller] == 'projects') do
           .navIcon
             i.fa.fa-bar-chart-o
           span Dashboard

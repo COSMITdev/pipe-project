@@ -15,13 +15,19 @@ nav.navbar.navbar-default.navbar-fixed-top
         - if current_user
           li
             / TODO add class active
-            = link_to 'Projects', projects_path, class: ('active' if params[:controller] == 'projects')
+            = link_to 'Projects', projects_path, class: ('active' if params[:controller] == 'projects' && params[:action] == 'index')
       ul.nav.navbar-nav.navbar-right
         - if current_user
           li
-            = link_to 'Profile', edit_user_registration_path
+            = link_to 'Profile ', edit_user_registration_path, class: ('active' if params[:controller] == 'users/registrations')
           li
             = link_to 'Sign Out', destroy_user_session_path, method: :delete
+          - unless params[:controller] == 'projects' && params[:action] == 'index' || params[:controller] == 'users/registrations' || params[:action] == 'home'
+            hr
+            li.visible-xs
+              = link_to 'Dashboard', project_path(@project), title: 'Dashboard', class: ('active' if params[:controller] == 'projects')
+            li.visible-xs
+              = link_to 'Threads', project_topics_path(@project), title: 'Threads', class: ('active' if params[:controller] == 'topics')
         - else
           li
             = link_to 'Sign Up', new_user_registration_path
