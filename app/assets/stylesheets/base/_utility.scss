@@ -171,6 +171,15 @@
   }
 }
 
+.u-linkInverse-light {
+  color: $gray-blue-light;
+
+  &:hover,
+  &:focus {
+    color: $brand;
+  }
+}
+
 // # Misc
 // # =================================================================
 .u-imageReplace {

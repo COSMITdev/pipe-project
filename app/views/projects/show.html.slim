@@ -23,6 +23,8 @@
         .taskList.u-marginTop30.u-marginBot25
           - @tasks.each do |task|
             .checkbox
+              = link_to project_task_path(@project, task), method: :delete, class: 'u-linkInverse-light' do
+                i.fa.fa-trash-o
               label
                 = check_box_tag "task[finished]", 'finished', task.finished, data: { url: project_task_check_path(@project, task),
                                                                                      remote: true,
