@@ -1,6 +1,12 @@
-h1 Projects#edit
-
-= simple_form_for @project, method: :put do |f|
-  = f.input :name
-  
-  = f.submit 'Editar Projeto'
+.container-fluid.-fullHeight
+  .row
+    / main content
+    .col-sm-8.col-md-6.u-centered.mainContent
+      .pageTitle.u-marginTop20.u-marginBot30
+        h1 Edit Project 
+      div
+        = simple_form_for @project, method: :put do |f|
+          = f.label :name, label: 'Project Name'
+          = f.input :name, label: false, input_html: { class: '-big u-marginBot10' }
+          = link_to 'Cancel', :back, class: 'btn -lg -default'
+          = f.submit 'Save Project', class: 'btn -lg -primary u-floatRgt'

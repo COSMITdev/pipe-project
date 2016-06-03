@@ -20,11 +20,12 @@ nav
 
 	section.sideNavProjects
 		h5.small.u-textUp.u-marginBot15.u-marginTop35 Last Projects
-		ul
-			- @projects.each do |project|
-				li
-					= link_to project_path(project) do 
-						span = project.name
+		- if @projects.any?
+			ul
+				- @projects.each do |project|
+					li
+						= link_to project_path(project) do 
+							span = project.name
 		= link_to '+ New Project', new_project_path, class: 'u-linkInverse u-marginTop15'
 
 	section.sideNavFooter
