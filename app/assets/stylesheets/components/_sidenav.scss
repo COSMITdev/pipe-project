@@ -34,7 +34,7 @@ $sideNavBg: $gray-blue-lighter;
         background-color: transparent;
         text-decoration: none;
         display:block;
-        width: 100%;
+        width: calc(100% + 10px);
         padding: 4px 13px 5px 10px;
         margin-left: -10px;
 
@@ -73,6 +73,18 @@ $sideNavBg: $gray-blue-lighter;
       color: $brand;
     }
   }
+
+.sideNavYourProject h5 {
+  .fa {
+    color: $gray-blue-medium;
+    width: 20px;
+
+    &:hover,
+    &:focus {
+      color: $brand;
+    }
+  }
+}
 
 // # Footer
 // # =================================================================
