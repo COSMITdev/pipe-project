@@ -1,6 +1,14 @@
-h1 Invitations#new
-
-= simple_form_for @invitation, url: project_send_invitation_path(@project) do |f|
-  = f.input :email
-
-  = f.submit 'Convidar'
+.container-fluid.-fullHeight
+  .row
+    / sidenav (left)
+    .col-sm-4.col-md-3.hidden-xs.sideNav
+      = render 'partials/sidenav'
+    / main content
+    .col-sm-8.col-md-9.col-sm-offset-4.col-md-offset-3.mainContent
+      .pageTitle.u-marginTop20.u-marginBot30
+        h1 Invite new Member
+      div
+        = simple_form_for @invitation, url: project_send_invitation_path(@project) do |f|
+          = f.input :email, placeholder: 'example@email.com', input_html: { class: '-big u-marginBot10' }
+          = link_to 'Cancel', :back, class: 'btn -lg -default'
+          = f.submit 'Send Invitation', class: 'btn -lg -primary u-floatRgt'
