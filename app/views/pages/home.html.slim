@@ -10,33 +10,34 @@ section.pageHero
                 h2.u-textWhite.u-marginTop5 Unlock the hidden potential of your team and discover how Basecam Clone can help you build awesome projects
                 = link_to "Sign Up for FREE", new_user_registration_path, class: 'btn -lg -primary u-marginTop15'
 
-section.benefits
+section.benefits.u-paddingTop40
   .container
     .row
       .col-sm-10.u-centered
-        h2.u-textCenter.u-textBlue.u-marginTop50.u-marginBot30 Benefits of our Product
+        h2.u-textCenter.u-textBlue.u-marginBot30 Benefits of our Product
         .row
-          .col-sm-6
+          .col-sm-5
             ul
-              - 3.times do
-                li.u-marginBot30
+              - 4.times do
+                li
                   h3.u-textBlue.u-marginBot5 Some benefit here
                   p.u-textGray Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et incididunt ut labore et
 
-          .col-sm-6
-            p some image here
+          .col-sm-7
+            = image_tag('example.png', class: 'img-side')
 
-section.features.u-paddingTop40.u-paddingBot60
+section.features.u-paddingTop45.u-paddingBot65
   .container
     .row
       .col-sm-10.u-centered
         .row
         - 3.times do
           .col-sm-4.u-textCenter.u-textWhite
-            h3 Some feature here
-            p.small Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+            h3.u-marginBot20 Some feature here
+            i.fa.fa-bar-chart-o
+            p.small.u-marginTop15 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 
-section.footer.u-paddingTop25.u-paddingBot25
+section.footer.u-paddingTop30.u-paddingBot30
   .container
     .row
       .col-sm-10.u-centered

@@ -90,6 +90,8 @@
 // # Section Benefits
 // # =================================================================
 section.benefits {
+  overflow: hidden;
+
   h2 {
     font-size: 2.375rem;
   }
@@ -102,6 +104,16 @@ section.benefits {
     font-size: 1.125rem;
     font-weight: 300;
   }
+
+  .img-side {
+    position: static;
+    display: block;
+    overflow: hidden;
+    max-width: 250%;
+    float: left;
+    border-radius: $globalRadius;
+    box-shadow: 0 0 20px 3px rgba(0,0,0,.10);
+  }
 }
 
 // # Section Features
@@ -111,6 +123,10 @@ section.features {
 
   h3 {
     font-size: 1.625rem;
+  }
+
+  i {
+    font-size: 4.375rem;
   }
 }
 
