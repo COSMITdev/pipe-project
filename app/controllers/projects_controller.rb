@@ -10,7 +10,8 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @topics = @project.topics.order(updated_at: :desc).limit(3)
+    @topics  = @project.topics.order(updated_at: :desc).limit(3)
+    @tasks   = @project.tasks.unfinished.order(finished: :asc, created_at: :desc).limit(6)
   end
 
   def new
@@ -21,9 +22,9 @@ class ProjectsController < ApplicationController
     @project = current_user.own_projects.build(permitted_params)
 
     if @project.valid? && @project.save
-      redirect_to @project, alert: 'Seu projeto foi criado com sucesso!'
+      redirect_to @project, alert: 'Your Project were created with success!'
     else
-      flash[:alert] = 'Por favor, confira os erros do formulário'
+      flash[:alert] = 'Please, check for errors on the form'
       render :new
     end
   end
@@ -36,9 +37,9 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
 
     if @project.valid? && @project.save
-      redirect_to @project, alert: 'Seu projeto foi editado com sucesso!'
+      redirect_to @project, alert: 'Your Project were edited with success!'
     else
-      flash[:alert] = 'Por favor, confira os erros do formulário'
+      flash[:alert] = 'Please, check for errors on the form'
       render :edit
     end
   end
@@ -61,9 +62,9 @@ class ProjectsController < ApplicationController
         InvitationMailer.invite_new_user(@project, @invitation).deliver_now
       end
 
-      redirect_to @project, alert: 'Convite enviado com sucesso!'
+      redirect_to @project, alert: 'Invitation has been sent!'
     else
-      flash[:alert] = 'Por favor, confira os erros do formulário'
+      flash[:alert] = 'Please, check for errors on the form'
       render :invitations
     end
   end
@@ -87,7 +88,7 @@ class ProjectsController < ApplicationController
     members = project.users
 
     unless owner == current_user || members.include?(current_user)
-      flash[:alert] = 'Você não tem permissão para acessar este projeto.'
+      flash[:alert] = 'You do not have permission to access this Project'
       redirect_to projects_path
     end
   end

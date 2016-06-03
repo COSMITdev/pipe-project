@@ -1,0 +1,23 @@
+.container-fluid.-fullHeight
+  .row
+    .col-sm-4.col-md-3.hidden-xs.sideNav
+      = render 'partials/sidenav'
+
+    .col-sm-8.col-md-9.col-sm-offset-4.col-md-offset-3.mainContent
+      .pageTitle.u-marginTop20
+        h1 Tasks
+      
+      = simple_form_for @task, url: project_tasks_path(@project) do |f|
+        .commentBox.u-marginTop20
+          = f.input :description, label: false, class: '-block', placeholder: 'Describe your task here...'
+          = f.submit 'Add Task', class: 'btn -md -primary u-floatRgt'
+
+      .taskList.u-marginTop30.u-marginBot25
+        - @tasks.each do |task|
+          .checkbox
+            = link_to 'Delete', project_task_path(@project, task), method: :delete, data: {confirm: 'Are you sure?'}
+            label
+              = check_box_tag "task[finished]", 'finished', task.finished, data: { url: project_task_check_path(@project, task),
+                                                                                   remote: true,
+                                                                                   method: :patch }
+              = task.description

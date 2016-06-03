@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
 
     if @comment.valid? && @comment.save
       @topic.touch
-      flash[:notice] = 'Comentário adicionado com sucesso!'
+      flash[:notice] = 'Comment added with success!'
       redirect_to project_topic_path(@topic.project, @topic)
     else
       @project = @topic.project
@@ -35,7 +35,7 @@ class CommentsController < ApplicationController
     members = project.users
 
     unless owner == current_user || members.include?(current_user)
-      flash[:alert] = 'Você não tem permissão para acessar este projeto.'
+      flash[:alert] = 'You do not have permission to access this Project'
       redirect_to projects_path
     end
   end

@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     end
     get 'invitations', to: 'projects#invitations', as: :invitation
     post 'send_invitation', to: 'projects#send_invitation', as: :send_invitation
+    resources :tasks, only: [:index, :create, :destroy] do
+      patch 'check', to: 'tasks#check', as: :check
+    end
   end
 
   get 'tasks_index', to: 'pages#tasks_index', as: :tasks_index
