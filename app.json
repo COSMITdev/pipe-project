@@ -1,7 +1,7 @@
 {
   "name": "basecamp-clone",
   "scripts": {
-    "postdeploy": "bin/rake db:setup"
+    "postdeploy": "bin/rake db:migrate"
   },
   "env": {
     "RACK_ENV": {
