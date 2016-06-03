@@ -3,17 +3,9 @@
 // # =================================================================
 
 .threadList {
-	h3 {
-		font-size: 1rem;
-	}
-
 	p {
 		color: $gray-medium;
 		font-weight: 300;
-
-		&.small {
-			font-size: 90%;
-		}
 	}
 
 	a {
