@@ -36,6 +36,8 @@ class TopicsController < ApplicationController
   end
 
   def edit
+    @projects = current_user.own_projects + current_user.projects
+    @project = Project.find(params[:project_id])
     @topic = Topic.find(params[:id])
   end
 

@@ -1,7 +1,17 @@
-h1 Topics#edit
-
-= simple_form_for @topic, url: project_topic_path(@topic.project, @topic) do |f|
-  = f.input :title
-  = f.input :body
-  
-  = f.submit 'Editar Discussão'
+.container-fluid.-fullHeight
+  .row
+    / sidenav (left)
+    .col-sm-4.col-md-3.hidden-xs.sideNav
+      = render 'partials/sidenav'
+    / main content
+    .col-sm-8.col-md-9.col-sm-offset-4.col-md-offset-3.mainContent
+      .pageTitle.u-marginTop20.u-marginBot30
+        h1 Edit Thread
+      div
+        = simple_form_for @topic, url: project_topic_path(@topic.project, @topic) do |f|
+          = f.label :title, label: 'Title'
+          = f.input :title, label: false
+          = f.label :body, label: 'Content', class: 'u-marginTop10'
+          = f.input :body, label: false, input_html: { class: '-big u-marginBot10' }
+          = link_to 'Cancel', :back, class: 'btn -lg -default'
+          = f.submit 'Save Edit', class: 'btn -lg -primary u-floatRgt'
