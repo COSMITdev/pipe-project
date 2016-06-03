@@ -5,10 +5,10 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = current_user.own_projects + current_user.projects
+    @projects = @projects.sort_by {|p| p[:created_at]}
   end
 
   def show
-    @projects = current_user.own_projects + current_user.projects
     @project = Project.find(params[:id])
     @topics = @project.topics
   end
@@ -93,5 +93,6 @@ class ProjectsController < ApplicationController
 
   def load_sidebar
     @projects = current_user.own_projects + current_user.projects
+    @projects = @projects.first(6).sort_by {|p| p[:created_at]}
   end
 end
