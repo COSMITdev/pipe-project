@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :projects, except: :destroy do
-    resources :topics, except: [:destroy] do
+    resources :topics, path: 'threads', except: [:destroy] do
       resources :comments, only: :create
     end
     get 'invitations', to: 'projects#invitations', as: :invitation
