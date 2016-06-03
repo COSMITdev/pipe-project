@@ -43,7 +43,7 @@ class TopicsController < ApplicationController
     @topic = @project.topics.find(params[:id])
 
     if @topic.valid? && @topic.update_attributes(permitted_params)
-      flash[:notice] = 'This Thread were edited with success!'
+      flash[:notice] = 'This thread was successfully edited!'
       redirect_to project_topic_path(@project, @topic)
     else
       flash[:alert] = 'Please, check errors in the form'
