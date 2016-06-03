@@ -45,6 +45,17 @@ textarea {
   }
 }
 
+// # Checkbox and Radio
+// # =================================================================
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+  position: relative;
+  margin-left: 0;
+  margin-right: 5px;
+}
+
 // # Help block, hint
 // # =================================================================
 .help-block,

@@ -14,7 +14,7 @@
               = f.input :password, required: true
             .form-group
               = f.input :remember_me, as: :boolean if devise_mapping.rememberable? 
-          .form-actions.u-marginBot20
+          .form-actions
             = f.button :submit, 'Sign In', class: 'btn -lg -primary -block u-marginTop10'
         
         = render "users/shared/links"
