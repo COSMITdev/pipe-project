@@ -43,6 +43,7 @@ class ProjectsController < ApplicationController
   end
 
   def invitations
+    @projects = current_user.own_projects + current_user.projects
     @project = Project.find(params[:project_id])
     @invitation = @project.invitations.build
   end
@@ -81,8 +82,8 @@ class ProjectsController < ApplicationController
 
   def check_permission
     # Check if user is owner of project or if it belong to members
-    owner   = Project.find(params[:id]).user
-    members = Project.find(params[:id]).users
+    owner   = Project.find(params[:id] || params[:project_id]).user
+    members = Project.find(params[:id] || params[:project_id]).users
 
     unless owner == current_user || members.include?(current_user)
       flash[:alert] = 'Você não tem permissão para acessar este projeto.'
