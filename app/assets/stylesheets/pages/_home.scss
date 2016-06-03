@@ -132,18 +132,20 @@ section.features {
 
 // # Section Footer
 // # =================================================================
-.footer-brand {
-  display: inline-block;
-  text-decoration: none;
-  color: $gray;
-  margin: 0;
-}
-
-ul {
-  margin:0;
-
-  li {
+section.footer {
+  .footer-brand {
     display: inline-block;
+    text-decoration: none;
+    color: $gray;
+    margin: 0;
+  }
+
+  ul {
+    margin:0;
+
+    li {
+      display: inline-block;
+    }
   }
 }
 
