@@ -8,6 +8,7 @@
       .threadContent
         .pageTitle.u-marginTop20
           h1 = @topic.title
+          = link_to 'Edit', edit_project_topic_path(@project, @topic), class: 'btn -md -default u-floatRgt'
         .threadAuthor
           h4.u-noMargin
             span.authorName = @topic.user.name
