@@ -36,7 +36,7 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
 
-    if @project.valid? && @project.save
+    if @project.valid? && @project.update_attributes(permitted_params)
       redirect_to @project, alert: 'Your Project were edited with success!'
     else
       flash[:alert] = 'Please, check for errors on the form'
@@ -46,7 +46,7 @@ class ProjectsController < ApplicationController
 
   def invitations
     @project = Project.find(params[:project_id])
-    @invitation = @project.invitations.build
+    @invitation = Invitation.new(project: @project)
   end
 
   def send_invitation
@@ -95,6 +95,6 @@ class ProjectsController < ApplicationController
 
   def load_sidebar
     @projects = current_user.own_projects + current_user.projects
-    @projects = @projects.first(6).sort_by {|p| p[:created_at]}
+    @projects = @projects.first(6).sort_by {|p| p[:created_at]}.uniq{|p| p.id}
   end
 end
