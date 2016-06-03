@@ -33,3 +33,10 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .mainContent {
+    margin-top: 20px;
+    padding: 30px 15px 20px;
+  }
+}
