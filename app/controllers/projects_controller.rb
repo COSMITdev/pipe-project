@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :check_permission, except: [:index, :new, :create]
   before_action :authenticate_user!
+  before_action :load_sidebar
 
   def index
     @projects = current_user.own_projects + current_user.projects
@@ -43,7 +44,6 @@ class ProjectsController < ApplicationController
   end
 
   def invitations
-    @projects = current_user.own_projects + current_user.projects
     @project = Project.find(params[:project_id])
     @invitation = @project.invitations.build
   end
@@ -89,5 +89,9 @@ class ProjectsController < ApplicationController
       flash[:alert] = 'Você não tem permissão para acessar este projeto.'
       redirect_to projects_path
     end
+  end
+
+  def load_sidebar
+    @projects = current_user.own_projects + current_user.projects
   end
 end
