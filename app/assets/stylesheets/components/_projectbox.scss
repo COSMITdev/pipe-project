@@ -12,9 +12,11 @@
 
     h2 {
       color: $black;
+      height: 61px;
 
       &.newProject {
         color: $brand;
+        height: auto;
       }
     }
 

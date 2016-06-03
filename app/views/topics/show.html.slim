@@ -8,6 +8,7 @@
       .threadContent
         .pageTitle.u-marginTop20
           h1 = @topic.title
+          = link_to 'Edit', edit_project_topic_path(@project, @topic), class: 'btn -md -default u-floatRgt'
         .threadAuthor
           h4.u-noMargin
             span.authorName = @topic.user.name
@@ -33,5 +34,7 @@
                   p = comment.body
         .commentBox.u-marginTop40
           = simple_form_for @comment, url: project_topic_comments_path(@project, @topic) do |f|
-            = f.input :body, as: :text, label: false, class: '-block', placeholder: 'Write your comment here...'
-            = f.submit 'Comment', class: 'btn -md -primary u-floatRgt'
+            = f.error_notification 
+            .form-inputs
+              = f.input :body, as: :text, label: false, class: '-block', placeholder: 'Write your comment here...'
+              = f.submit 'Comment', class: 'btn -md -primary u-floatRgt'

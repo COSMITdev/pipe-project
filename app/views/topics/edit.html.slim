@@ -9,9 +9,11 @@
         h1 Edit Thread
       div
         = simple_form_for @topic, url: project_topic_path(@topic.project, @topic) do |f|
-          = f.label :title, label: 'Title'
-          = f.input :title, label: false
-          = f.label :body, label: 'Content', class: 'u-marginTop10'
-          = f.input :body, label: false, input_html: { class: '-big u-marginBot10' }
-          = link_to 'Cancel', :back, class: 'btn -lg -default'
-          = f.submit 'Save Thread', class: 'btn -lg -primary u-floatRgt'
+          = f.error_notification 
+          .form-inputs
+            = f.input :title, label: 'Title'
+            .form-group.u-marginTop10
+              = f.input :body, label: 'Content', input_html: { class: '-big' }
+          .form-actions.u-marginTop10
+            = link_to 'Cancel', :back, class: 'btn -lg -default'
+            = f.submit 'Save Thread', class: 'btn -lg -primary u-floatRgt'

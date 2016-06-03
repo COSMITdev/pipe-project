@@ -180,4 +180,16 @@ section.footer {
     margin-top: 0;
     margin-bottom: 4px;
   }
+
+  section.beneftis h2 {
+    margin: 0 0 5px !important;
+  }
+
+  section.footer {
+    text-align: center;
+    ul {
+      float: none !important;
+      text-align: center;
+    }
+  }
 }

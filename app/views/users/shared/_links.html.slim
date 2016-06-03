@@ -1,6 +1,6 @@
 - if controller_name != 'sessions'
   = link_to "Already have an account? Sign In!", new_session_path(resource_name), class: 'u-link'
-
+br
 - if devise_mapping.registerable? && controller_name != 'registrations'
   = link_to "Don't have an account? Sign Up!", new_registration_path(resource_name), class: 'u-link'
 br

@@ -22,9 +22,9 @@ class ProjectsController < ApplicationController
     @project = current_user.own_projects.build(permitted_params)
 
     if @project.valid? && @project.save
-      redirect_to @project, alert: 'Your Project were created with success!'
+      redirect_to @project, notice: 'Your project was successfully created!'
     else
-      flash[:alert] = 'Please, check for errors on the form'
+      flash[:alert] = 'Please, check errors in the form'
       render :new
     end
   end
@@ -37,9 +37,9 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
 
     if @project.valid? && @project.update_attributes(permitted_params)
-      redirect_to @project, alert: 'Your Project were edited with success!'
+      redirect_to @project, notice: 'Your project was successfully edited!'
     else
-      flash[:alert] = 'Please, check for errors on the form'
+      flash[:alert] = 'Please, check errors in the form'
       render :edit
     end
   end
@@ -61,10 +61,9 @@ class ProjectsController < ApplicationController
         @invitation.save
         InvitationMailer.invite_new_user(@project, @invitation).deliver_now
       end
-
-      redirect_to @project, alert: 'Invitation has been sent!'
+      redirect_to @project, notice: 'Invitation has been sent!'
     else
-      flash[:alert] = 'Please, check for errors on the form'
+      flash[:alert] = 'Please, check errors in the form'
       render :invitations
     end
   end

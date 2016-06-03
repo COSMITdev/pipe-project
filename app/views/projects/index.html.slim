@@ -10,7 +10,7 @@
             = link_to new_project_path do
               .projectBox
                 h2.newProject + New Project
-                p Start a new project now and collaborate with people to create awesome things
+                p Collaborate with people to create awesome things
           - @projects.each do |project|
             .col-sm-6.col-md-4
               = link_to project_path(project) do

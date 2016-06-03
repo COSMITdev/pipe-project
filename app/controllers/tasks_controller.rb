@@ -15,9 +15,9 @@ class TasksController < ApplicationController
     @tasks = @project.tasks.order(created_at: :asc)
 
     if @task.valid? && @task.save
-      redirect_to project_tasks_path(@project), alert: 'A new Task has been added!'
+      redirect_to project_tasks_path(@project), notice: 'A new Task has been added!'
     else
-      flash[:alert] = 'Please, check the errors on task form.'
+      flash[:alert] = 'Please, check errors in the form'
       render :index
     end
   end
@@ -36,7 +36,7 @@ class TasksController < ApplicationController
 
     @task.destroy
 
-    flash[:alert] = 'This Task has been removed!'
+    flash[:notice] = 'This Task has been removed!'
     redirect_to project_tasks_path(@project)
   end
 

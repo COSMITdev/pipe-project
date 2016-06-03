@@ -44,3 +44,54 @@ textarea {
     min-height: 260px;
   }
 }
+
+// # Checkbox and Radio
+// # =================================================================
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+  position: relative;
+  margin-left: 0;
+  margin-right: 5px;
+}
+
+// # Help block, hint
+// # =================================================================
+.help-block,
+.hint {
+  color: #999;
+  font-size: 80%;
+  margin-bottom: 0;
+  display: block;
+}
+
+// # Erros
+// # =================================================================
+.field_with_errors {
+  input:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea {
+    border: 2px solid $error !important;
+  }
+
+  label {
+    color: $error;
+  }
+}
+
+.error {
+  font-size: 80%;
+  color: $error;
+  display: block;
+}
+
+.error_notification {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
