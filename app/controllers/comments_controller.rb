@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   before_action :check_permission
   before_action :authenticate_user!
+  before_action :load_sidebar
 
   def create
     @topic = Topic.find(params[:topic_id])
@@ -35,5 +36,9 @@ class CommentsController < ApplicationController
       flash[:alert] = 'Você não tem permissão para acessar este projeto.'
       redirect_to projects_path
     end
+  end
+
+  def load_sidebar
+    @projects = current_user.own_projects + current_user.projects
   end
 end
