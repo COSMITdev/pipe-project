@@ -17,7 +17,7 @@
   }
 
   &.-lg {
-    padding: 20px 45px;
+    padding: 10px 20px;
     font-size: 1.125rem;
   }
 
@@ -31,12 +31,23 @@
   // # Colors
   // # ===========
   &.-primary {
-    color: white;
     background-color: $brand;
+    color: white;
 
     &:hover,
     &:focus {
       background-color: darken($brand, 20%);
+    }
+  }
+
+  &.-default {
+    background-color: #f2f2f2;
+    color: $gray;
+
+    &:hover,
+    &:focus {
+      background-color: #ccc;
+      color: $black;
     }
   }
 }

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
+  root 'pages#home'
+
   resources :projects, except: :destroy do
     resources :topics, except: [:destroy] do
       resources :comments, only: :create

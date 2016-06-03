@@ -17,6 +17,8 @@ class TopicsController < ApplicationController
   end
 
   def new
+    @projects = current_user.own_projects + current_user.projects
+    @project = Project.find(params[:project_id])
     @topic = Project.find(params[:project_id]).topics.build
   end
 
