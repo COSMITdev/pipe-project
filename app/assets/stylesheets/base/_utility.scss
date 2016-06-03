@@ -133,6 +133,24 @@
   text-transform: none;
 }
 
+// # Text Color
+// # =================================================================
+.u-textBlue {
+  color: $brand;
+}
+
+.u-textWhite {
+  color: white;
+}
+
+.u-textGray {
+  color: $gray-blue-dark;
+}
+
+.u-textGray-light {
+  color: #999;
+}
+
 // # Link
 // # =================================================================
 .u-link {
