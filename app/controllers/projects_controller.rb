@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @topics = @project.topics
+    @topics = @project.topics.order(updated_at: :desc).limit(3)
   end
 
   def new
