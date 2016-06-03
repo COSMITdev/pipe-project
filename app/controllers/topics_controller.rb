@@ -26,9 +26,9 @@ class TopicsController < ApplicationController
     @topic.user = current_user
 
     if @topic.valid? && @topic.save
-      redirect_to project_topic_path(@project, @topic), alert: 'A new Thread has been started!'
+      redirect_to project_topic_path(@project, @topic), notice: 'A new Thread has been created!'
     else
-      flash[:alert] = 'Please, check for errors on the form'
+      flash[:alert] = 'Please, check errors in the form'
       render :new
     end
   end
@@ -43,10 +43,10 @@ class TopicsController < ApplicationController
     @topic = @project.topics.find(params[:id])
 
     if @topic.valid? && @topic.update_attributes(permitted_params)
-      flash[:alert] = 'This Thread were edited with success!'
+      flash[:notice] = 'This Thread were edited with success!'
       redirect_to project_topic_path(@project, @topic)
     else
-      flash[:alert] = 'Please, check for errors on the form'
+      flash[:alert] = 'Please, check errors in the form'
       render :edit
     end
   end
