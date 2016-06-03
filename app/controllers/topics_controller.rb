@@ -5,7 +5,7 @@ class TopicsController < ApplicationController
 
   def index
     @project = Project.find(params[:project_id])
-    @topics = Project.find(params[:project_id]).topics
+    @topics = @project.topics.order(updated_at: :desc)
   end
 
   def show

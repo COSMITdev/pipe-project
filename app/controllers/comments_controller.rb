@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
     @comment.topic = @topic
 
     if @comment.valid? && @comment.save
+      @topic.touch
       flash[:notice] = 'Comentário adicionado com sucesso!'
       redirect_to project_topic_path(@topic.project, @topic)
     else
