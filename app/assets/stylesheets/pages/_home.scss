@@ -2,7 +2,7 @@
 // # Home
 // # =================================================================
 
-// # Header
+// # Navbar
 // # =================================================================
 .home {
   .navbar-fixed-top {
@@ -15,10 +15,30 @@
     .navbar-nav > li > a {
       color: $brand;
       margin-top: 13px;
+
+      &:hover,
+      &:focus {
+        background-color: lighten($brand, 40%);
+      }
     }
 
     .navbar-collapse {
       background-color: white;
+    }
+
+    .navbar-toggle {
+      margin-top: 12px;
+
+      .icon-bar {
+        background-color: $brand;
+      }
+
+      &:hover,
+      &:focus {
+        .icon-bar {
+          background-color: white;
+      }
+      }
     }
   }
 
@@ -31,6 +51,7 @@
       line-height: 37px;
     }
   }
+
 }
 
 // # Page Hero
@@ -133,5 +154,12 @@ ul {
     .container-fluid {
       width: 1170px;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .home .navbar-default .navbar-nav > li > a {
+    margin-top: 0;
+    margin-bottom: 4px;
   }
 }
