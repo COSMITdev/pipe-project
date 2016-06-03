@@ -1,6 +1,30 @@
-@charset "utf-8";
+@charset 'utf-8';
 
-@import "normalize-rails";
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "font-awesome";
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'font-awesome';
+@import 'sanilize';
+
+// ==== Variables
+@import 'variables/colors';
+@import 'variables/variables';
+
+// ==== Base
+@import 'base/base';
+@import 'base/font';
+@import 'base/utility';
+
+// ==== Components
+@import 'components/navbar';
+@import 'components/sidenav';
+@import 'components/title';
+@import 'components/buttons';
+@import 'components/maincontent';
+@import 'components/threadlist';
+@import 'components/tasklist';
+@import 'components/threadcontent';
+@import 'components/commentbox';
+@import 'components/forms';
+@import 'components/projectbox';
+
+// ==== Pages

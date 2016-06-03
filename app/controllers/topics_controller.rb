@@ -1,7 +1,15 @@
 class TopicsController < ApplicationController
   before_action :check_permission
+  before_action :authenticate_user!
+
+  def index
+    @projects = current_user.own_projects + current_user.projects
+    @project = Project.find(params[:project_id])
+    @topics = Project.find(params[:project_id]).topics
+  end
 
   def show
+    @projects = current_user.own_projects + current_user.projects
     @project = Project.find(params[:project_id])
     @topic = @project.topics.find(params[:id])
     @comment = Comment.new(user: current_user, topic: @topic)
@@ -9,6 +17,8 @@ class TopicsController < ApplicationController
   end
 
   def new
+    @projects = current_user.own_projects + current_user.projects
+    @project = Project.find(params[:project_id])
     @topic = Project.find(params[:project_id]).topics.build
   end
 
@@ -26,6 +36,8 @@ class TopicsController < ApplicationController
   end
 
   def edit
+    @projects = current_user.own_projects + current_user.projects
+    @project = Project.find(params[:project_id])
     @topic = Topic.find(params[:id])
   end
 

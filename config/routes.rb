@@ -3,11 +3,15 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
+  root 'pages#home'
+
   resources :projects, except: :destroy do
-    resources :topics, except: [:index, :destroy] do
+    resources :topics, except: [:destroy] do
       resources :comments, only: :create
     end
     get 'invitations', to: 'projects#invitations', as: :invitation
     post 'send_invitation', to: 'projects#send_invitation', as: :send_invitation
   end
+
+  get 'tasks_index',      to: 'pages#tasks_index',      as: :tasks_index
 end

@@ -1,0 +1,32 @@
+// # =================================================================
+// # Main content
+// # =================================================================
+
+// # Author
+// # ===========
+.threadAuthor {
+  margin-top: 3px;
+  .authorName,
+  .threadDate {
+    color: $gray;
+  }
+}
+
+.threadDate {
+  font-weight: 300;
+}
+
+// # Comments
+// # ===========
+.commentList {
+  li {
+    padding-bottom: 20px;
+    border-bottom: 1px solid $gray-blue-light;
+  }
+}
+
+.commentAuthor {
+  .threadDate {
+    color: $gray;
+  }
+}

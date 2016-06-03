@@ -1,1 +1,29 @@
-p = link_to 'Sair', destroy_user_session_path, method: :delete
+nav.navbar.navbar-default.navbar-fixed-top
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      - if current_user
+        = link_to 'Basecamp Clone', '', class: 'navbar-brand'
+      - else 
+        = link_to 'Basecamp Clone', root_path, class: 'navbar-brand'
+    .collapse.navbar-collapse#bs-example-navbar-collapse-1
+      ul.nav.navbar-nav
+        - if current_user
+          li
+            / TODO add class active
+            = link_to 'Projects', projects_path
+      ul.nav.navbar-nav.navbar-right
+        - if current_user
+          li
+            = link_to 'Profile', edit_user_registration_path
+          li
+            = link_to 'Sign Out', destroy_user_session_path, method: :delete
+        - else
+          li
+            = link_to 'Sign Up', new_user_registration_path
+          li
+            = link_to 'Sign In', new_user_session_path

@@ -1,0 +1,35 @@
+// # =================================================================
+// # Main content
+// # =================================================================
+
+// # General
+// # =================================================================
+.mainContent {
+  margin-top: 45px;
+  padding: 30px 60px 60px;
+
+  h2.heading {
+    position: relative;
+    overflow: hidden;
+    
+    span {
+      display: inline-block;
+      vertical-align: baseline;
+      zoom: 1;
+      *display: inline;
+      *vertical-align: auto;
+      position: relative;
+      padding: 0 20px 0 0;
+ 
+      &:after {
+        content: '';
+        display: block;
+        width: 1500px;
+        position: absolute;
+        top: 50%;
+        border-top: 1px solid $gray-blue-light;
+        left: 100%;
+      }
+    }
+  }
+}

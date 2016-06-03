@@ -1,0 +1,39 @@
+nav
+  section.sideNavYourProject
+    h5.small.u-textUp.u-marginBot15 = @project.name
+    ul
+      li
+        = link_to project_path(@project), class: 'active' do 
+          .navIcon
+            i.fa.fa-bar-chart-o
+          span Dashboard
+      li
+        = link_to project_topics_path(@project) do 
+          .navIcon
+            i.fa.fa-commenting-o
+          span Threads
+      li
+        = link_to tasks_index_path do 
+          .navIcon
+            i.fa.fa-check-square-o
+          span Tasks
+
+  section.sideNavProjects
+    h5.small.u-textUp.u-marginBot15.u-marginTop35 Last Projects
+    - if @projects.any?
+      ul
+        - @projects.each do |project|
+          li
+            = link_to project_path(project) do 
+              span = project.name
+    = link_to '+ New Project', new_project_path, class: 'u-linkInverse u-marginTop15'
+
+  section.sideNavFooter
+    span 
+      .navIcon
+        i.fa.fa-user
+      span 
+        = @project.users.count+1
+        |  members
+    span.u-marginLft5.u-marginRgt5 ・
+    span = link_to 'Invite members', project_invitation_path(@project), class: 'u-link'

@@ -1,0 +1,19 @@
+// # =================================================================
+// # Titles
+// # =================================================================
+
+.pageTitle {
+  display: table;
+  width: 100%;
+  
+  h1,
+  .btn {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  h1 {
+    color: $brand;
+    margin-bottom: 0;
+  }
+}

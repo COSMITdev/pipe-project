@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :check_permission
+  before_action :authenticate_user!
 
   def create
     @topic = Topic.find(params[:topic_id])

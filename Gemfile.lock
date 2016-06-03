@@ -176,7 +176,6 @@ GEM
     minitest (5.9.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
-    normalize-rails (3.0.3)
     orm_adapter (0.5.0)
     passenger (5.0.28)
       rack
@@ -343,7 +342,6 @@ DEPENDENCIES
   launchy
   letter_opener
   meta-tags
-  normalize-rails (~> 3.0.0)
   passenger (~> 5.0)
   pg
   pry-rails

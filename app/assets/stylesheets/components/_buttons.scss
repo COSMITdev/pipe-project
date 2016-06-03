@@ -1,0 +1,53 @@
+// # =================================================================
+// # Buttons
+// # =================================================================
+
+// # Base
+// # =================================================================
+.btn {
+  border: 0;
+  white-space: normal;
+  transition: all .2s;
+
+  // # Sizes
+  // # ===========
+  &.-md {
+    padding: 8px 15px;
+    font-size: 1rem;
+  }
+
+  &.-lg {
+    padding: 10px 20px;
+    font-size: 1.125rem;
+  }
+
+  // # Modifiers
+  // # ===========
+  &.-block {
+    width: 100%;
+    display: block;
+  }
+
+  // # Colors
+  // # ===========
+  &.-primary {
+    background-color: $brand;
+    color: white;
+
+    &:hover,
+    &:focus {
+      background-color: darken($brand, 20%);
+    }
+  }
+
+  &.-default {
+    background-color: #f2f2f2;
+    color: $gray;
+
+    &:hover,
+    &:focus {
+      background-color: #ccc;
+      color: $black;
+    }
+  }
+}

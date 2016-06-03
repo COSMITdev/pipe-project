@@ -1,5 +1,27 @@
-h1 Projects#index
-p = link_to 'Novo Projeto', new_project_path
-- @projects.each do |project|
-  = "#{project.name} - #{link_to 'Acessar', project} | #{link_to 'Editar', edit_project_path(project)}".html_safe
-  hr
+.container-fluid.-fullHeight
+  .row
+    / main content
+    .col-sm-10.u-centered.mainContent
+      section.threads
+        .pageTitle.u-marginTop20.u-marginBot30
+          h1 Your Projects
+        .row.projectList
+          .col-sm-6.col-md-4
+            = link_to new_project_path do
+              .projectBox
+                h2.newProject + New Project
+                p Start a new project now and collaborate with people to create awesome things
+          - @projects.each do |project|
+            .col-sm-6.col-md-4
+              = link_to project_path(project) do
+                .projectBox
+                  h2 = project.name
+                  span.memberIcon.small
+                    span.u-marginRgt5
+                      i.fa.fa-user
+                    span 
+                      = project.users.count+1
+                      |  members
+        .row.u-marginTop25
+          .col-sm-12
+            = link_to 'New Project', new_project_path, class: 'u-linkInverse'
