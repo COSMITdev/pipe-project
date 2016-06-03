@@ -46,7 +46,7 @@ class ProjectsController < ApplicationController
 
   def invitations
     @project = Project.find(params[:project_id])
-    @invitation = @project.invitations.build
+    @invitation = Invitation.new(project: @project)
   end
 
   def send_invitation
