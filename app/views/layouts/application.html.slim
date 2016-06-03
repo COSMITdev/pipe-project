@@ -14,7 +14,7 @@ html
     = csrf_meta_tags
     = favicon_link_tag 'favicon.png'
 
-  body.site
+  body class="#{params[:controller]} #{params[:action]}"
     = initjs_tag 'BasecampClone'
     = render 'layouts/flash'
     = render 'partials/header'
