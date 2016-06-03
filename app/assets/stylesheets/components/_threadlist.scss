@@ -3,31 +3,31 @@
 // # =================================================================
 
 .threadList {
-	p {
-		color: $gray-medium;
-		font-weight: 300;
-	}
+  p {
+    color: $gray-medium;
+    font-weight: 300;
+  }
 
-	a {
-		text-decoration: none;
+  a {
+    text-decoration: none;
 
-		h2,
-		h3 {
-			color: $black;
-		}
+    h2,
+    h3 {
+      color: $black;
+    }
 
-		&:hover,
-		&:focus {
-			h2,
-			h3 {
-				color: $brand;
-				transition: all .2s;
-			}
+    &:hover,
+    &:focus {
+      h2,
+      h3 {
+        color: $brand;
+        transition: all .2s;
+      }
 
-			p {
-				color: $black;
-				transition: all .2s;
-			}
-		}
-	}
+      p {
+        color: $black;
+        transition: all .2s;
+      }
+    }
+  }
 }

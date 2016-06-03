@@ -9,13 +9,13 @@ $sideNavBg: $gray-blue-lighter;
 // # General
 // # =================================================================
 .sideNav {
-	background-color: $sideNavBg;
-	color: $gray-blue-dark;
-	font-size: 90%;
-	display: block;
-	height: 100%;
-	position: fixed;
-	top: 0;
+  background-color: $sideNavBg;
+  color: $gray-blue-dark;
+  font-size: 90%;
+  display: block;
+  height: 100%;
+  position: fixed;
+  top: 0;
   left: 0;
   bottom: 0;
   padding: 30px 30px 30px 40px;
@@ -24,65 +24,66 @@ $sideNavBg: $gray-blue-lighter;
 // # Lists
 // # =========== 
   ul {
-	  margin: 0;
+    margin: 0;
 
-  	li { 
-  		margin-bottom: 2px;
+    li { 
+    margin-bottom: 2px;
 
-  		a {
-	  		color: $gray-blue-dark;
-	  		background-color: transparent;
-	  		text-decoration: none;
-	  		display:block;
-	  		width: 100%;
-	  		padding: 4px 13px 5px 10px;
-	  		margin-left: -10px;
+      a {
+        color: $gray-blue-dark;
+        background-color: transparent;
+        text-decoration: none;
+        display:block;
+        width: 100%;
+        padding: 4px 13px 5px 10px;
+        margin-left: -10px;
 
-		  	&.active,
-		  	&:hover,
-		  	&:focus {
-		  		color: $brand;
-		  		background-color: $blue-light;
-		  		border-radius: $globalRadius;
-		  	}
-		  }
-	  }
+        &.active,
+        &:hover,
+        &:focus {
+          color: $brand;
+          background-color: $blue-light;
+          border-radius: $globalRadius;
+        }
+      }
+    }
   }
+
 // # Specificities
 // # =========== 
   h5 {
-  	color: $gray-blue-medium
+    color: $gray-blue-medium
   }
 
   .navIcon {
-  	width: 18px;
-  	display: inline-block;
+    width: 18px;
+    display: inline-block;
   }
 
   .u-link {
-  	display: inline-block;
+    display: inline-block;
   }
 
   .u-linkInverse {
-  	color: $gray-blue-dark;
-  	display: block;
+    color: $gray-blue-dark;
+    display: block;
 
-  	&:hover,
-  	&:focus {
-  		color: $brand;
-  	}
+    &:hover,
+    &:focus {
+      color: $brand;
+    }
   }
 
 // # Footer
 // # =================================================================
   .sideNavFooter {
-  	bottom: 45px;
-  	position: absolute;
-  	height: 45px;
-  	margin: 0 -20px;
+    bottom: 45px;
+    position: absolute;
+    height: 45px;
+    margin: 0 -20px;
 
-  	.u-linkInverse {
-  		display: inline-block;
-  	}
+    .u-linkInverse {
+      display: inline-block;
+    }
   }
 }
