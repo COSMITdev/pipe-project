@@ -61,7 +61,7 @@ class ProjectsController < ApplicationController
         @invitation.save
         InvitationMailer.invite_new_user(@project, @invitation).deliver_now
       end
-      redirect_to @project, notice: 'Invitation has been sent!'
+      redirect_to project_invitation_path, notice: 'Invitation has been sent!'
     else
       flash[:alert] = 'Please, check errors in the form'
       render :invitations

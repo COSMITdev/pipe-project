@@ -11,14 +11,14 @@
         = simple_form_for @invitation, url: project_send_invitation_path(@project) do |f|
           = f.error_notification 
           .form-inputs
-            = f.input :email, placeholder: 'example@email.com'
+            = f.input :email, placeholder: 'example@email.com', autofocus: true
           .form-actions.u-marginTop10
             = link_to 'Cancel', :back, class: 'btn -lg -default'
             = f.submit 'Send Invitation', class: 'btn -lg -primary u-floatRgt'
       hr.u-marginTop40
       .row.u-marginTop30
         .col-sm-6
-          h2 Current Members
+          h2.u-marginBot20 Current Members
           = "#{@project.user.name} (Owner)"
           hr
           - if @project.users.any?
@@ -27,8 +27,8 @@
               span = member.email
               hr
         .col-sm-6
-          h2 Invited Members
+          h2.u-marginBot20 Invited Members
           - if @project.invitations.any?
             - @project.invitations.each do |invitation|
-              h1 = invitation.email
+              span = invitation.email
               hr
