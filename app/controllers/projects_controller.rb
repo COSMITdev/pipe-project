@@ -36,7 +36,7 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
 
-    if @project.valid? && @project.save
+    if @project.valid? && @project.update_attributes(permitted_params)
       redirect_to @project, alert: 'Your Project were edited with success!'
     else
       flash[:alert] = 'Please, check for errors on the form'
