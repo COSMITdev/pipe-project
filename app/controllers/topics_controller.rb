@@ -73,6 +73,6 @@ class TopicsController < ApplicationController
 
   def load_sidebar
     @projects = current_user.own_projects + current_user.projects
-    @projects = @projects.first(6).sort_by {|p| p[:created_at]}
+    @projects = @projects.first(6).sort_by {|p| p[:created_at]}.uniq{|p| p.id}
   end
 end
