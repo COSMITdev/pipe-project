@@ -12,11 +12,11 @@ nav
           .navIcon
             i.fa.fa-commenting-o
           span Threads
-      li
-        = link_to tasks_index_path, class: ('active' if params[:controller] == 'tasks') do 
-          .navIcon
-            i.fa.fa-check-square-o
-          span Tasks
+      / li
+      /   = link_to tasks_index_path, class: ('active' if params[:controller] == 'tasks') do 
+      /     .navIcon
+      /       i.fa.fa-check-square-o
+      /     span Tasks
 
   section.sideNavProjects
     h5.small.u-textUp.u-marginBot15.u-marginTop35 Last Projects
