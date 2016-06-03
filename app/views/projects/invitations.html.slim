@@ -12,3 +12,19 @@
           = f.input :email, placeholder: 'example@email.com', input_html: { class: '-big u-marginBot10' }
           = link_to 'Cancel', :back, class: 'btn -lg -default'
           = f.submit 'Send Invitation', class: 'btn -lg -primary u-floatRgt'
+
+        .col-sm-12.col-md-6.u-marginTop30
+          h2 Current Members
+          = "#{@project.user.name} (Owner)"
+          hr
+          - @project.users.each do |member|
+            small = member.name
+            small = member.email
+            hr
+
+        .col-sm-12.col-md-6.u-marginTop30
+          h2 Invited Members
+          - @project.invitations.each do |invitation|
+            small = invitation.email
+            hr
+        
