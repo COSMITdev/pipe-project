@@ -6,8 +6,7 @@ nav.navbar.navbar-default.navbar-fixed-top
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand href="#" Basecamp Clone
-    / Collect the nav links, forms, and other content for toggling
+      = link_to 'Basecamp Clone', project_path(@project), class: 'navbar-brand'
     .collapse.navbar-collapse#bs-example-navbar-collapse-1
       ul.nav.navbar-nav
         li

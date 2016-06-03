@@ -3,8 +3,9 @@ class TopicsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @projects = current_user.own_projects + current_user.projects
     @project = Project.find(params[:project_id])
-    @topic = @project.topics.all
+    @topics = Project.find(params[:project_id]).topics
   end
 
   def show
