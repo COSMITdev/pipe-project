@@ -6,13 +6,13 @@ nav.navbar.navbar-default.navbar-fixed-top
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      = link_to 'Basecamp Clone', project_path(@project), class: 'navbar-brand'
+      = link_to 'Basecamp Clone', '', class: 'navbar-brand'
     .collapse.navbar-collapse#bs-example-navbar-collapse-1
       ul.nav.navbar-nav
         li
           = link_to 'Projects', projects_path, class: 'active'
       ul.nav.navbar-nav.navbar-right
         li
-          = link_to 'Profile', ''
+          = link_to 'Profile', edit_user_registration_path
         li
           = link_to 'Sign Out', destroy_user_session_path, method: :delete

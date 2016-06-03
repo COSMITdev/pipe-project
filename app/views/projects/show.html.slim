@@ -13,7 +13,7 @@
             li
               = link_to project_topic_path(@project, topic) do
                 h3 = topic.title
-                p.small = topic.body
+                p = truncate(topic.body, length: 210)
         = link_to 'See all Threads', project_topics_path(@project), class: 'u-linkInverse'
         / new_project_topic_path(@project)
 

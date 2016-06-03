@@ -13,6 +13,6 @@
           = link_to project_topic_path(@project, topic) do
             li
               h2.u-marginBot5 = topic.title
-              p.u-marginBot25 = topic.body
+              p.u-marginBot25 = truncate(topic.body, length: 210)
 
-      = link_to 'New Thread', '', class: 'u-linkInverse'
+      = link_to 'New Thread', new_project_topic_path(@project), class: 'u-linkInverse'
