@@ -1,18 +1,43 @@
-h1 = "#{@topic.title} (#{link_to 'Editar', edit_project_topic_path(@project, @topic)})".html_safe
+/ = simple_form_for @comment, url: project_topic_comments_path(@project, @topic) do |f|
+/   = f.label :body
+/   = f.input :body, label: false
+/   br
+/   = f.submit 'Comentar'
 
-p = @topic.body
-
-hr
-
-- if @comments.any?
-  - @comments.each do |comment|
-    small = "#{comment.user.name} - #{time_ago_in_words(comment.created_at)}"
-    p = comment.body
-- else
-  p Nothing to see here...yet!
-
-= simple_form_for @comment, url: project_topic_comments_path(@project, @topic) do |f|
-  = f.label :body
-  = f.input :body, label: false
-  br
-  = f.submit 'Comentar'
+.container-fluid.-fullHeight
+  .row
+    / sidenav (left)
+    .col-sm-4.col-md-3.hidden-xs.sideNav
+      = render 'partials/sidenav'
+    / main content
+    .col-sm-8.col-md-9.col-sm-offset-4.col-md-offset-3.mainContent
+      .threadContent
+        .pageTitle.u-marginTop20
+          h1 = @topic.title
+        .threadAuthor
+          h4.u-noMargin
+            span.authorName = @topic.user.name
+            span.threadDate.u-marginLft5.u-marginRgt5 ・
+            span.threadDate
+              = time_ago_in_words(@topic.created_at)
+              |  ago
+        .threadText.u-marginTop20
+          p = @topic.body
+        hr.u-marginTop30.u-marginBot35
+        - if @comments.any?
+          ul.commentList.u-noMargin
+            - @comments.each do |comment|
+              li.u-marginBot30
+                .commentAuthor
+                  h4.u-noMargin
+                    span.authorName = comment.user.name
+                    span.threadDate.u-marginLft5.u-marginRgt5 ・
+                    span.threadDate 
+                      = time_ago_in_words(comment.created_at)
+                      |  ago
+                .commentContent.u-marginTop5
+                  p = comment.body
+        .commentBox.u-marginTop40
+          = simple_form_for @comment, url: project_topic_comments_path(@project, @topic) do |f|
+            = f.input :body, as: :text, label: false, class: '-block', placeholder: 'Write your comment here...'
+            = f.submit 'Comment', class: 'btn -md -primary u-floatRgt'

@@ -9,6 +9,7 @@ class TopicsController < ApplicationController
   end
 
   def show
+    @projects = current_user.own_projects + current_user.projects
     @project = Project.find(params[:project_id])
     @topic = @project.topics.find(params[:id])
     @comment = Comment.new(user: current_user, topic: @topic)

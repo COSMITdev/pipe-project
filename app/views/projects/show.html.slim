@@ -15,7 +15,6 @@
                 h3 = topic.title
                 p = truncate(topic.body, length: 210)
         = link_to 'See all Threads', project_topics_path(@project), class: 'u-linkInverse'
-        / new_project_topic_path(@project)
 
       section.tasks.u-marginTop40
         h2.heading
