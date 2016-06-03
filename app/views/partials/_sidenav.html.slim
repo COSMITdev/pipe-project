@@ -3,20 +3,20 @@ nav
     h5.small.u-textUp.u-marginBot15 = @project.name
     ul
       li
-        = link_to project_path(@project), class: 'active' do 
+        = link_to project_path(@project), class: ('active' if params[:controller] == 'projects') do 
           .navIcon
             i.fa.fa-bar-chart-o
           span Dashboard
       li
-        = link_to project_topics_path(@project) do 
+        = link_to project_topics_path(@project), class: ('active' if params[:controller] == 'topics') do 
           .navIcon
             i.fa.fa-commenting-o
           span Threads
-      li
-        = link_to tasks_index_path do 
-          .navIcon
-            i.fa.fa-check-square-o
-          span Tasks
+      / li
+      /   = link_to tasks_index_path, class: ('active' if params[:controller] == 'tasks') do 
+      /     .navIcon
+      /       i.fa.fa-check-square-o
+      /     span Tasks
 
   section.sideNavProjects
     h5.small.u-textUp.u-marginBot15.u-marginTop35 Last Projects

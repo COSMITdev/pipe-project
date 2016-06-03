@@ -7,7 +7,7 @@ nav.navbar.navbar-default.navbar-fixed-top
         span.icon-bar
         span.icon-bar
       - if current_user
-        = link_to 'Basecamp Clone', '', class: 'navbar-brand'
+        = link_to 'Basecamp Clone', projects_path, class: 'navbar-brand'
       - else 
         = link_to 'Basecamp Clone', root_path, class: 'navbar-brand'
     .collapse.navbar-collapse#bs-example-navbar-collapse-1
@@ -15,7 +15,7 @@ nav.navbar.navbar-default.navbar-fixed-top
         - if current_user
           li
             / TODO add class active
-            = link_to 'Projects', projects_path
+            = link_to 'Projects', projects_path, class: ('active' if params[:controller] == 'projects')
       ul.nav.navbar-nav.navbar-right
         - if current_user
           li

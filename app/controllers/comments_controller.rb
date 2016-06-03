@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
     @comment.topic = @topic
 
     if @comment.valid? && @comment.save
+      @topic.touch
       flash[:notice] = 'Comentário adicionado com sucesso!'
       redirect_to project_topic_path(@topic.project, @topic)
     else
@@ -29,8 +30,9 @@ class CommentsController < ApplicationController
 
   def check_permission
     # Check if user is owner of project or if it belong to members
-    owner   = Project.find(params[:project_id]).user
-    members = Project.find(params[:project_id]).users
+    project = Project.find(params[:project_id])
+    owner   = project.user
+    members = project.users
 
     unless owner == current_user || members.include?(current_user)
       flash[:alert] = 'Você não tem permissão para acessar este projeto.'
@@ -40,5 +42,6 @@ class CommentsController < ApplicationController
 
   def load_sidebar
     @projects = current_user.own_projects + current_user.projects
+    @projects = @projects.first(6).sort_by {|p| p[:created_at]}
   end
 end

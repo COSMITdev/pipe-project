@@ -5,7 +5,7 @@ class TopicsController < ApplicationController
 
   def index
     @project = Project.find(params[:project_id])
-    @topics = Project.find(params[:project_id]).topics
+    @topics = @project.topics.order(updated_at: :desc)
   end
 
   def show
@@ -17,7 +17,7 @@ class TopicsController < ApplicationController
 
   def new
     @project = Project.find(params[:project_id])
-    @topic = Project.find(params[:project_id]).topics.build
+    @topic = @project.topics.build
   end
 
   def create
@@ -35,7 +35,7 @@ class TopicsController < ApplicationController
 
   def edit
     @project = Project.find(params[:project_id])
-    @topic = Topic.find(params[:id])
+    @topic = @project.topics.find(params[:id])
   end
 
   def update
@@ -61,8 +61,9 @@ class TopicsController < ApplicationController
 
   def check_permission
     # Check if user is owner of project or if it belong to members
-    owner   = Project.find(params[:project_id]).user
-    members = Project.find(params[:project_id]).users
+    project = Project.find(params[:project_id])
+    owner   = project.user
+    members = project.users
 
     unless owner == current_user || members.include?(current_user)
       flash[:alert] = 'Você não tem permissão para acessar este projeto.'
@@ -72,5 +73,6 @@ class TopicsController < ApplicationController
 
   def load_sidebar
     @projects = current_user.own_projects + current_user.projects
+    @projects = @projects.first(6).sort_by {|p| p[:created_at]}
   end
 end
