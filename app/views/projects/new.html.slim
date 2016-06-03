@@ -6,7 +6,9 @@
         h1 New Project
       div
         = simple_form_for @project do |f|
-          = f.label :name, label: 'Project Name'
-          = f.input :name, label: false, input_html: { class: '-big u-marginBot10' }
-          = link_to 'Cancel', :back, class: 'btn -lg -default'
-          = f.submit 'Start new Project', class: 'btn -lg -primary u-floatRgt'
+          = f.error_notification 
+          .form-inputs
+            = f.input :name, label: 'Project Name'
+          .form-actions.u-marginTop10
+            = link_to 'Cancel', :back, class: 'btn -lg -default'
+            = f.submit 'Start new Project', class: 'btn -lg -primary u-floatRgt'
