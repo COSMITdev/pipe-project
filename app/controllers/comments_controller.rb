@@ -30,8 +30,9 @@ class CommentsController < ApplicationController
 
   def check_permission
     # Check if user is owner of project or if it belong to members
-    owner   = Project.find(params[:project_id]).user
-    members = Project.find(params[:project_id]).users
+    project = Project.find(params[:project_id])
+    owner   = project.user
+    members = project.users
 
     unless owner == current_user || members.include?(current_user)
       flash[:alert] = 'Você não tem permissão para acessar este projeto.'
