@@ -23,8 +23,8 @@
           hr
           - if @project.users.any?
             - @project.users.each do |member|
-              span = member.name
-              span = member.email
+              span 
+                | #{member.name} (#{member.email})
               hr
         .col-sm-6
           h2.u-marginBot20 Invited Members
