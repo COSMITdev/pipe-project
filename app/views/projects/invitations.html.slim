@@ -15,17 +15,20 @@
           .form-actions.u-marginTop10
             = link_to 'Cancel', :back, class: 'btn -lg -default'
             = f.submit 'Send Invitation', class: 'btn -lg -primary u-floatRgt'
+      hr.u-marginTop40
       .row.u-marginTop30
         .col-sm-6
           h2 Current Members
           = "#{@project.user.name} (Owner)"
           hr
-          - @project.users.each do |member|
-            small = member.name
-            small = member.email
-            hr
+          - if @project.users.any?
+            - @project.users.each do |member|
+              span = member.name
+              span = member.email
+              hr
         .col-sm-6
           h2 Invited Members
-          - @project.invitations.each do |invitation|
-            small = invitation.email
-            hr
+          - if @project.invitations.any?
+            - @project.invitations.each do |invitation|
+              h1 = invitation.email
+              hr
