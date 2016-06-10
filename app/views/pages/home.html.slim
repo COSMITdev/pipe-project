@@ -6,22 +6,27 @@ section.pageHero
           .u-verticalAlign
             .row
               .col-sm-10.u-centered
-                h1.u-textWhite Your team and client always in the same page
-                h2.u-textWhite.u-marginTop5 Unlock the hidden potential of your team and discover how Basecam Clone can help you build awesome projects
+                h1.u-textWhite Your team and client always on the same page
+                h2.u-textWhite.u-marginTop5 Unlock the hidden potential of your team and discover how we can help you to build awesome projects
                 = link_to "Sign Up for FREE", new_user_registration_path, class: 'btn -lg -primary u-marginTop15'
 
 section.benefits.u-paddingTop40
   .container
     .row
       .col-sm-10.u-centered
-        h2.u-textCenter.u-textBlue.u-marginBot30 Benefits of our Product
+        h2.u-textCenter.u-textBlue.u-marginBot30 Our benefits
         .row
           .col-sm-5
             ul
-              - 4.times do
-                li
-                  h3.u-textBlue.u-marginBot5 Some benefit here
-                  p.u-textGray Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et incididunt ut labore et
+              li.u-marginBot30
+                h3.u-textBlue.u-marginBot5 Collaborate in discussions
+                p.u-textGray Never miss a point or have a doubt unsolved. Discuss with your team members and clients to solve any issue, decide something or even brainstorm new ideas.
+              li.u-marginBot30
+                h3.u-textBlue.u-marginBot5 Keep track of everyone is doing
+                p.u-textGray You can have all your project tasks visible to everyone and they will know what is happening in the project. Your client can be updated automatically.
+              li.u-marginBot30
+                h3.u-textBlue.u-marginBot5 Everyone in the same place
+                p.u-textGray Keep the people that matter to the project together by inviting them to participate in the project. You can have your team members and clients working together in the same place.
 
           .col-sm-7
             = image_tag('example.png', class: 'img-side')
@@ -31,11 +36,18 @@ section.features.u-paddingTop45.u-paddingBot65
     .row
       .col-sm-10.u-centered
         .row
-        - 3.times do
           .col-sm-4.u-textCenter.u-textWhite
-            h3.u-marginBot20 Some feature here
-            i.fa.fa-bar-chart-o
-            p.small.u-marginTop15 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+            h3.u-marginBot20 Create projects
+            i.fa.fa-folder-open-o
+            p.small.u-marginTop15 With projects you can separate discussions, tasks and members related to it.
+          .col-sm-4.u-textCenter.u-textWhite
+            h3.u-marginBot20 Use Threads to discuss
+            i.fa.fa-commenting-o
+            p.small.u-marginTop15 Have any doubt? Want to discuss something? Have new ideias? Go forward!
+          .col-sm-4.u-textCenter.u-textWhite
+            h3.u-marginBot20 Invite people
+            i.fa.fa-user-plus
+            p.small.u-marginTop15 You can have your client and team members in the same place.
 
 section.footer.u-paddingTop30.u-paddingBot30
   .container
@@ -44,7 +56,7 @@ section.footer.u-paddingTop30.u-paddingBot30
         .row
           .col-sm-6
             = link_to root_path do
-              h3.footer-brand Basecamp Clone
+              h3.footer-brand Demo Project
           .col-sm-6
             ul.u-floatRgt.text-right
               - if current_user
