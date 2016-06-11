@@ -54,19 +54,16 @@ section.footer.u-paddingTop30.u-paddingBot30
     .row
       .col-sm-10.u-centered
         .row
-          .col-sm-6
+          .col-sm-4
             = link_to root_path do
               h3.footer-brand Demo Project
-          .col-sm-6
-            ul.u-floatRgt.text-right
-              - if current_user
-                li
-                  = link_to 'Profile', edit_user_registration_path, class: 'u-linkInverse u-marginRgt15'
-                li
-                  = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'u-linkInverse'
-              - else
-                li
-                  = link_to 'Sign Up', new_user_registration_path, class: 'u-linkInverse u-marginRgt15'
-                li
-                  = link_to 'Sign In', new_user_session_path, class: 'u-linkInverse'
-
+          .col-sm-8
+            ul.u-floatRgt.text-right.small
+              li.u-marginRgt15
+                = link_to 'About', about_path, class: 'u-linkInverse'
+              li
+                span.u-textGray-light
+                  | Made with 
+                  i.fa.fa-heart-o
+                  |  by 
+                  = link_to 'COSMIT', 'http://cosmit.me', class: 'u-linkInverse'

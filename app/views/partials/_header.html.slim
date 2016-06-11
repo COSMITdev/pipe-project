@@ -17,6 +17,8 @@ nav.navbar.navbar-default.navbar-fixed-top
             / TODO add class active
             = link_to 'Projects', projects_path, class: ('active' if params[:controller] == 'projects' && params[:action] == 'index')
       ul.nav.navbar-nav.navbar-right
+        li
+          = link_to 'About ', about_path, class: ('active' if params[:action] == 'about')
         - if current_user
           li
             = link_to 'Profile ', edit_user_registration_path, class: ('active' if params[:controller] == 'users/registrations')
