@@ -1,0 +1,21 @@
+.container-fluid.-fullHeight
+  .row
+    / main content
+    .col-sm-8.col-md-6.u-centered.mainContent
+      .pageTitle.u-marginTop20.u-marginBot30
+        h1 About
+      div
+        p 
+          | This project was created by 
+          = link_to 'COSMIT', 'http://cosmit.me', target: '_blank'
+          |  team in <strong>one week</strong> of plan, design and development. This is only a showcase product of our abilities and it will not be improved.
+        p
+          | You can find the code on our 
+          = link_to 'Github repository', 'https://github.com/COSMITdev/demo-project.git', target: '_blank'
+          | .
+        p
+          | If you have any question or want to know more about us you can go to our 
+          = link_to 'website', 'http://cosmit.me', target: '_blank'
+          |  or send us an email at 
+          = mail_to 'hi@cosmit.me', 'hi@cosmit.me'
+          | .

@@ -1,4 +1,4 @@
-# Basecamp-clone
+# Demo Project
 
 * Main branch: master
 * Ruby version: "2.3.1"
