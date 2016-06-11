@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root to: 'pages#home'
+  get 'about', to: 'pages#about', as: :about
 
   resources :projects, except: :destroy do
     resources :topics, path: 'threads', except: [:destroy] do
@@ -15,6 +16,4 @@ Rails.application.routes.draw do
       patch 'check', to: 'tasks#check', as: :check
     end
   end
-
-  get 'tasks_index', to: 'pages#tasks_index', as: :tasks_index
 end

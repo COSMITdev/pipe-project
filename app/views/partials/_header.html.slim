@@ -22,7 +22,7 @@ nav.navbar.navbar-default.navbar-fixed-top
             = link_to 'Profile ', edit_user_registration_path, class: ('active' if params[:controller] == 'users/registrations')
           li
             = link_to 'Sign Out', destroy_user_session_path, method: :delete
-          - unless params[:controller] == 'projects' && params[:action] == 'index' || params[:controller] == 'users/registrations' || params[:action] == 'home' || params[:controller] == 'projects' && params[:action] == 'new'
+          - unless params[:controller] == 'projects' && params[:action] == 'index' || params[:controller] == 'users/registrations' || params[:controller] == 'pages' || params[:controller] == 'projects' && params[:action] == 'new'
             hr
             li.visible-xs
               = link_to 'Dashboard', project_path(@project), title: 'Dashboard', class: ('active' if params[:controller] == 'projects')
