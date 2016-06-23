@@ -151,10 +151,11 @@ section.footer {
 
 // # Media queries
 // # =================================================================
-@media (min-width: 1200px) {
+
+@media (min-width: 768px) {
   .home {
     .container-fluid {
-      width: 1170px;
+      width: 750px;
     }
   }
 }
@@ -167,10 +168,10 @@ section.footer {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .home {
     .container-fluid {
-      width: 750px;
+      width: 1170px;
     }
   }
 }
