@@ -5,9 +5,9 @@ Rails.application.configure do
     config.action_mailer.default_url_options = { host: ENV["HEROKU_APP_NAME"] + ".herokuapp.com" }
     config.action_controller.default_url_options = { host: ENV["HEROKU_APP_NAME"] + ".herokuapp.com" }
   else
-    config.action_mailer.asset_host = ("https://" + 'basecamp-clone-staging' + ".herokuapp.com")
-    config.action_mailer.default_url_options = { host: 'basecamp-clone-staging' + ".herokuapp.com" }
-    config.action_controller.default_url_options = { host: 'basecamp-clone-staging' + ".herokuapp.com" }
+    config.action_mailer.asset_host = ("https://" + 'pipe-project-staging' + ".herokuapp.com")
+    config.action_mailer.default_url_options = { host: 'pipe-project-staging' + ".herokuapp.com" }
+    config.action_controller.default_url_options = { host: 'pipe-project-staging' + ".herokuapp.com" }
   end
   # Code is not reloaded between requests.
   config.cache_classes = true

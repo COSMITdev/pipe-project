@@ -9,7 +9,7 @@
 
 To install (development environment) on your machine, just follow the tips above:
 
-    % git clone git@github.com:cosmitdev/basecamp-clone.git
+    % git clone git@github.com:cosmitdev/pipe-project.git
 
 After you have cloned this repo, run this setup script to set up your machine
 with the necessary dependencies to run and test this app:

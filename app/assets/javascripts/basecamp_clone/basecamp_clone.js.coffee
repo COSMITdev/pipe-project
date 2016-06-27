@@ -1,7 +1,7 @@
 #= require_self
 #= require_tree .
 
-window.BasecampClone =
+window.PipeProject =
   configs:
     turbolinks: true # True to use initjs with Turbolinks by default.
     pjax: false # True to use initjs with pjax by default.
@@ -16,5 +16,5 @@ window.BasecampClone =
   init: ->
     # Something here. This is called in every page.
 
-  modules: -> [BasecampClone.Flash]
+  modules: -> [PipeProject.Flash]
     # Some modules that will be used on every page.

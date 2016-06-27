@@ -1,7 +1,7 @@
 Rails.application.configure do
-  config.action_mailer.asset_host = "http://basecamp-clone-production.herokuapp.com"
-  config.action_mailer.default_url_options = { host: 'basecamp-clone-production.herokuapp.com' }
-  config.action_controller.default_url_options = { host: 'basecamp-clone-production.herokuapp.com' }
+  config.action_mailer.asset_host = "http://pipe-project-production.herokuapp.com"
+  config.action_mailer.default_url_options = { host: 'pipe-project-production.herokuapp.com' }
+  config.action_controller.default_url_options = { host: 'pipe-project-production.herokuapp.com' }
   # Code is not reloaded between requests.
   config.cache_classes = true
 

@@ -1,5 +1,5 @@
 {
-  "name": "basecamp-clone",
+  "name": "pipe-project",
   "scripts": {
     "postdeploy": "bin/rake db:migrate"
   },

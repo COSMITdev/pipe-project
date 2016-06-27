@@ -1,4 +1,4 @@
-BasecampClone.Flash =
+PipeProject.Flash =
   init: ->
     setTimeout( ->
       $('.flash').slideDown()

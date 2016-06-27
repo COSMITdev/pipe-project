@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require basecamp_clone/basecamp_clone.js
+//= require pipe_project/pipe_project.js
 //= require init.js
 //= require_tree .
 //= require bootstrap
