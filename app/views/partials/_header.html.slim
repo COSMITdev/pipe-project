@@ -7,9 +7,9 @@ nav.navbar.navbar-default.navbar-fixed-top
         span.icon-bar
         span.icon-bar
       - if current_user
-        = link_to 'Demo Project', projects_path, class: 'navbar-brand'
+        = link_to 'Pipe Project', projects_path, class: 'navbar-brand'
       - else 
-        = link_to 'Demo Project', root_path, class: 'navbar-brand'
+        = link_to 'Pipe Project', root_path, class: 'navbar-brand'
     .collapse.navbar-collapse#bs-example-navbar-collapse-1
       ul.nav.navbar-nav
         - if current_user

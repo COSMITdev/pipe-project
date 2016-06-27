@@ -1,4 +1,4 @@
-# Demo Project
+# Pipe Project
 
 * Main branch: master
 * Ruby version: "2.3.1"
@@ -58,7 +58,7 @@ Now, to create the feature branch just run `git checkout master && git checkout 
 
 After you finish the implementations what you did on your branch, you can up this to Github and open a Pull Request. This way other persons of the project can available your things and propose improvements. Just create the PR when you have confidence you create everything you need to, like views, controllers, specs...
 
-## Finishing/Delivering/Updating Trello
+<!-- ## Finishing/Delivering/Updating Trello
 
 For now we are using Trello to organize the features and sprints of the project, so, just delivery a task when you finish this and up the PR. Anyone can update cards on Trello, so be confident to do it yourself when you feel that your feature is ready to launch.
-https://trello.com/b/r1MEFAOq/basecamp-killer
+https://trello.com/b/r1MEFAOq/basecamp-killer -->
